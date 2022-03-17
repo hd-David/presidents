@@ -24,3 +24,10 @@ def hello_world(lastname):
         if President["lastname"]== lastname:
             return jsonify(President)
     return "not found", 404
+
+@app.route("/presido/<number>")
+def presidents_zam(number):
+    for row in Presidents:
+        if row["number"] == number:
+            return jsonify(row)
+    return "not found", 404
